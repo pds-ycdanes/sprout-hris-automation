@@ -20,11 +20,11 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run login test
+      - name: Run ping test [HRIS login]
         env:
           SPROUT_USERNAME: ${{ secrets.SPROUT_USERNAME }}
           SPROUT_PASSWORD: ${{ secrets.SPROUT_PASSWORD }}
-        run: npx playwright test
+        run: npx playwright test tests/login.spec.ts
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
