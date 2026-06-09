@@ -18,7 +18,7 @@ Follow these steps to get the automation running on your local machine:
 1. **Clone the repository**:
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/pds-ycdanes/sprout-hris-automation.git
    cd hris-automations
    ```
 
