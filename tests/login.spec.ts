@@ -7,10 +7,10 @@ test("test", async ({ page }) => {
   await page.getByRole("textbox", { name: "Email or Username" }).click();
   await page
     .getByRole("textbox", { name: "Email or Username" })
-    .fill(env.SPROUT_USERNAME);
+    .fill(process.env.SPROUT_USERNAME);
   await page.getByRole("textbox", { name: "Email or Username" }).press("Tab");
   await page
     .getByRole("textbox", { name: "Password" })
-    .fill(env.SPROUT_PASSWORD);
+    .fill(process.env.SPROUT_PASSWORD);
   await page.getByRole("button", { name: "Log in" }).click();
 });
