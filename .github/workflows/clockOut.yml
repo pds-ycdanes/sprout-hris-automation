@@ -2,8 +2,8 @@ name: HRIS Clock Out
 
 on:
   schedule:
-    - cron: "5 14 * * *"
-  workflow_dispatch:
+    - cron: "5 14 * * 2-6" # 2:05 PM UTC is 10:05 PM Philippine Time
+  workflow_dispatch: # manual trigger mode
 
 concurrency:
   group: hris-clockout
@@ -39,7 +39,7 @@ jobs:
 
           echo $TODAY > $FILE
 
-      - name: Run automation
+      - name: Run Clock Out automation
         env:
           SPROUT_USERNAME: ${{ secrets.SPROUT_USERNAME }}
           SPROUT_PASSWORD: ${{ secrets.SPROUT_PASSWORD }}
