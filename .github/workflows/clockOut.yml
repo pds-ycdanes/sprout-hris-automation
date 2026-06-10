@@ -1,7 +1,6 @@
 name: HRIS Clock Out
 
 on:
-  schedule:
   workflow_dispatch: # manual trigger mode
 
 concurrency:
