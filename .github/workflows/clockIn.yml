@@ -1,4 +1,4 @@
-name: HRIS Clock Out
+name: HRIS Clock In
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # manual trigger mode
 
 concurrency:
-  group: hris-clockout
+  group: hris-clockin
   cancel-in-progress: false
 
 jobs:
@@ -26,18 +26,6 @@ jobs:
 
       - name: Install Playwright
         run: npx playwright install --with-deps
-
-      - name: Prevent duplicate run
-        run: |
-          FILE=".last-run-clockout"
-          TODAY=$(date +%Y-%m-%d)
-
-          if [ -f "$FILE" ] && grep -q "$TODAY" "$FILE"; then
-            echo "Already ran today. Exiting."
-            exit 0
-          fi
-
-          echo $TODAY > $FILE
 
       - name: Run Clock In automation
         env:

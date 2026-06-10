@@ -27,18 +27,6 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Prevent duplicate run
-        run: |
-          FILE=".last-run-clockout"
-          TODAY=$(date +%Y-%m-%d)
-
-          if [ -f "$FILE" ] && grep -q "$TODAY" "$FILE"; then
-            echo "Already ran today. Exiting."
-            exit 0
-          fi
-
-          echo $TODAY > $FILE
-
       - name: Run Clock Out automation
         env:
           SPROUT_USERNAME: ${{ secrets.SPROUT_USERNAME }}
