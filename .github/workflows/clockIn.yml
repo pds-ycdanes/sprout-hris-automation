@@ -2,7 +2,7 @@ name: HRIS Clock In
 
 on:
   schedule:
-    - cron: "40 3 * * 2-6" # 3:40 AM UTC is 11:40 AM Philippine Time
+    - cron: "50 11 * * 2-6" # 3:40 AM UTC is 11:40 AM Philippine Time
   workflow_dispatch: # manual trigger mode
 
 concurrency:
