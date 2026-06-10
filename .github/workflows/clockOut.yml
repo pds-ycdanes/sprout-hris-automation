@@ -2,7 +2,6 @@ name: HRIS Clock Out
 
 on:
   schedule:
-    # - cron: "5 14 * * 2-6" # 2:05 PM UTC is 10:05 PM Philippine Time
   workflow_dispatch: # manual trigger mode
 
 concurrency:
